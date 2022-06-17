@@ -12,7 +12,7 @@ public class Person {
     private String surname;
     private String city;
     private Integer age;
-    private static List<Person> extension;
+    private static List<Person> extension = new ArrayList<>();
 
     public Person(String name, String surname, String city, Integer age) {
         this.name = name;
@@ -128,5 +128,18 @@ public class Person {
                 ", city='" + city + '\'' +
                 ", age=" + age +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return Objects.equals(name, person.name) && Objects.equals(surname, person.surname) && Objects.equals(city, person.city) && Objects.equals(age, person.age);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, city, age);
     }
 }
