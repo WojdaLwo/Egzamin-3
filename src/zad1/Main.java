@@ -8,13 +8,22 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<Integer> listaI = Arrays.asList(10, 1, 4, 7, 36, 9, 17, 24, 46, 4);
-        List<String> listaS = Arrays.asList("skdahf", "jasdbf", "awedwad", "zjhgkq", "djfbgks");
-        MinMax<Integer> inty = MinMaxService.getMinAndMax(listaI);
-        MinMax<String> stringi = MinMaxService.getMinAndMax(listaS);
-        System.out.println(inty.getMax());
-        System.out.println(inty.getMin());
-        System.out.println(stringi.getMax());
-        System.out.println(stringi.getMin());
+        List<Integer> listI = Arrays.asList(10, 1, 4, 7, 36, 9, 17, 24, 46, 4);
+        List<String> listS = Arrays.asList("skdahf", "jasdbf", "awedwad", "zjhgkq", "djfbgks");
+        MinMax<Integer> ints = MinMaxService.getMinAndMax(listI);
+        MinMax<String> strings = MinMaxService.getMinAndMax(listS);
+        System.out.println(ints.getMax());
+        System.out.println(ints.getMin());
+        System.out.println(strings.getMax());
+        System.out.println(strings.getMin());
+        Person p1 = new Person("Janina", "Kowalska",33);
+        Person p2 = new Person("Anna", "Kowal",63);
+        Person p3 = new Person("Maria", "Kot",23);
+        Person p4 = new Person("Marek", "Kot",28);
+        Person p5 = new Person("Roman", "Baka",18);
+        MinMax<Person> persons = MinMaxService.getMinAndMax(Person.getExtension());
+        System.out.println(persons.getMax());
+        System.out.println(persons.getMin());
+
     }
 }
