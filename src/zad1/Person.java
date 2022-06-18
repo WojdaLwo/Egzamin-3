@@ -17,11 +17,6 @@ public class Person implements Comparable<Person>{
         extension.add(this);
     }
 
-    @Override
-    public int compareTo(Person o) {
-        return name.compareTo(o.getName());
-    }
-
     public String getName() {
         return name;
     }
@@ -36,6 +31,11 @@ public class Person implements Comparable<Person>{
 
     public static List<Person> getExtension() {
         return extension;
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        return name.compareTo(o.getName());
     }
 
     @Override
